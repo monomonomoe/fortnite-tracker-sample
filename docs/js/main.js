@@ -16,7 +16,7 @@ window.onload = (() => {
     const urlUserStatusAPI = 'https://fortnite-public-api.theapinetwork.com/prod09/users/public/br_stats_v2';
     
     const tweetURL = 'https://twitter.com/intent/tweet';
-    const tweetOptions = '&url=https://git.io/fhd2J';
+    const tweetOptions = 'https://git.io/fhd2J';
     
     const buttonStart = document.querySelector('#start');
     const textUserName = document.querySelector('#user_name');
@@ -174,12 +174,17 @@ window.onload = (() => {
         const killsGame = roundSecondDecimal(kills / matchesplayed);
         let tweetText = `?text=`;
         tweetText += `${rule}の戦績です！` + `%0a`;
+        tweetText += `%0a`;
         tweetText += `プレイ数%20:%20` + matchesplayed + `%0a`;
         tweetText += `ビクロイ数%20:%20` + placetop1 + `%0a`;
         tweetText += `キル数%20:%20` + kills + `%0a`;
         tweetText += `キル/デス比%20:%20` + killsDeath + `%0a`;
         tweetText += `キル/ゲーム比%20:%20` + killsGame + `%0a`;
-        console.log( tweetURL + tweetText + tweetOptions);
+        tweetText += `%0a`;
+        tweetText += `下のサイトから戦績を確認しよう！` + `%0a`;
+        tweetText += tweetOptions + `%0a`;
+        tweetText += `#フォートナイト戦績`;
+        console.log( tweetURL + tweetText);
         return tweetURL + tweetText + tweetOptions;
     }
 
