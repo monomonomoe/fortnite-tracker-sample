@@ -10,9 +10,13 @@ window.onload = (() => {
      * コメントうざいくらい書いてます！サーバーサイドの人間なんです！許してください！
      * お仕事ください！
      */
+    
 
     const urlUserMetaAPI = 'https://fortnite-public-api.theapinetwork.com/prod09/users/id';
     const urlUserStatusAPI = 'https://fortnite-public-api.theapinetwork.com/prod09/users/public/br_stats_v2';
+    
+    const tweetURL = 'https://twitter.com/intent/tweet';
+    const tweetOptions = '&hashtags=フォートナイト戦績&url=https://monomonomoe.github.io/fortnite-tracker-sample/';
     
     const buttonStart = document.querySelector('#start');
     const textUserName = document.querySelector('#user_name');
@@ -21,6 +25,9 @@ window.onload = (() => {
     const playstyle = document.querySelector('#playstyle');
 
     const twitter_listdocument = document.querySelector("#twitter_list");
+    const twitter_solo = document.querySelector("#twitter-solo");
+    const twitter_duo = document.querySelector("#twitter-duo");
+    const twitter_squad = document.querySelector("#twitter-squad");
 
     buttonStart.addEventListener('click', () => {
         if (!validation()) return false;
@@ -106,6 +113,7 @@ window.onload = (() => {
         div.appendChild(createH2('ソロ'));
         if (data.defaultsolo) {
             div = createDivRuleData(div, data.defaultsolo.default);
+            twitter_solo.href = createTweetURL(data.defaultsolo.default, 'ソロ');
         } else {
             div.appendChild(createP('ソロの戦闘データがありません。'));
         }
@@ -117,6 +125,7 @@ window.onload = (() => {
         div.appendChild(createH2('デュオ'));
         if (data.defaultduo) {
             div = createDivRuleData(div, data.defaultduo.default);
+            twitter_duo.href = createTweetURL(data.defaultduo.default, 'デュオ');
         } else {
             div.appendChild(createP('デュオの戦闘データがありません。'));
         }
@@ -128,6 +137,7 @@ window.onload = (() => {
         div.appendChild(createH2('スクアッド'));
         if (data.defaultsquad) {
             div = createDivRuleData(div, data.defaultsquad.default);
+            twitter_squad.href = createTweetURL(data.defaultsquad.default, 'スクアッド');
         } else {
             div.appendChild(createP('スクアッドの戦闘データがありません。'));
         }
@@ -140,8 +150,8 @@ window.onload = (() => {
         const placetop1 = json.placetop1 ? json.placetop1 : 0;
         const kills = json.kills ? json.kills : 0;
         const killsDeath = roundSecondDecimal(kills / (matchesplayed - placetop1));
-        // 結果を生成
         const killsGame = roundSecondDecimal(kills / matchesplayed);
+        // 結果を生成
         div.appendChild(createP('プレイ数:' + matchesplayed));
         div.appendChild(createP('ビクロイ数:' + placetop1));
         div.appendChild(createP('キル数:' + kills));
@@ -149,6 +159,23 @@ window.onload = (() => {
         div.appendChild(createP('キル/ゲーム比:' + killsGame));
         div.appendChild(createHr());
         return div;
+    }
+
+    const createTweetURL = (json, rule) => {
+        const matchesplayed = json.matchesplayed ? json.matchesplayed : 0;
+        const placetop1 = json.placetop1 ? json.placetop1 : 0;
+        const kills = json.kills ? json.kills : 0;
+        const killsDeath = roundSecondDecimal(kills / (matchesplayed - placetop1));
+        const killsGame = roundSecondDecimal(kills / matchesplayed);
+        let tweetText = `?text=`;
+        tweetText += `${rule}の戦績です！` + `%0a`;
+        tweetText += `プレイ数:` + matchesplayed + `%0a`;
+        tweetText += `ビクロイ数:` + placetop1 + `%0a`;
+        tweetText += `キル数:` + kills + `%0a`;
+        tweetText += `キル/デス比:` + killsDeath + `%0a`;
+        tweetText += `キル/ゲーム比:` + killsGame + `%0a`;
+        console.log( tweetURL + tweetText + tweetOptions);
+        return tweetURL + tweetText + tweetOptions;
     }
 
     const createDiv = (id) => {
@@ -201,4 +228,5 @@ window.onload = (() => {
         alert(msg);
         return false;
     }
+    getUserStatus('38b70dd013154afea2df409ae71abb8f');
 });
