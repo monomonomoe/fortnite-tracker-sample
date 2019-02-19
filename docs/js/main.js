@@ -16,10 +16,11 @@ window.onload = (() => {
     const urlUserStatusAPI = 'https://fortnite-public-api.theapinetwork.com/prod09/users/public/br_stats_v2';
     
     const tweetURL = 'https://twitter.com/intent/tweet';
-    const tweetOptions = '&hashtags=フォートナイト戦績&url=https://monomonomoe.github.io/fortnite-tracker-sample/';
+    const tweetOptions = '&url=https://monomonomoe.github.io/fortnite-tracker-sample/';
     
     const buttonStart = document.querySelector('#start');
     const textUserName = document.querySelector('#user_name');
+    const textUserId = document.querySelector('#user_id');
     const result = document.querySelector('#result');
     const message = document.querySelector('#message');
     const playstyle = document.querySelector('#playstyle');
@@ -34,7 +35,11 @@ window.onload = (() => {
         message.innerHTML = '';
         result.innerHTML = '';
         twitter_listdocument.style.display = "none";
-        getUserMeta(textUserName.value);
+        if (textUserId.value == '') {
+            getUserMeta(textUserName.value);
+        } else {
+            getUserStatus(textUserId.value);
+        }
     })
 
     const getUserMeta = (userName) => {
@@ -169,11 +174,11 @@ window.onload = (() => {
         const killsGame = roundSecondDecimal(kills / matchesplayed);
         let tweetText = `?text=`;
         tweetText += `${rule}の戦績です！` + `%0a`;
-        tweetText += `プレイ数 : ` + matchesplayed + `%0a`;
-        tweetText += `ビクロイ数 : ` + placetop1 + `%0a`;
-        tweetText += `キル数 : ` + kills + `%0a`;
-        tweetText += `キル/デス比 : ` + killsDeath + `%0a`;
-        tweetText += `キル/ゲーム比 : ` + killsGame + `%0a`;
+        tweetText += `プレイ数%20:%20` + matchesplayed + `%0a`;
+        tweetText += `ビクロイ数%20:%20` + placetop1 + `%0a`;
+        tweetText += `キル数%20:%20` + kills + `%0a`;
+        tweetText += `キル/デス比%20:%20` + killsDeath + `%0a`;
+        tweetText += `キル/ゲーム比%20:%20` + killsGame + `%0a`;
         console.log( tweetURL + tweetText + tweetOptions);
         return tweetURL + tweetText + tweetOptions;
     }
@@ -219,7 +224,7 @@ window.onload = (() => {
      * @return boolean
      */
     const validation = () => {
-        if (textUserName.value == '') return errorAlert('ユーザ名を入力してください');
+        if (textUserName.value == '' && textUserId.value == '') return errorAlert('ユーザ名またはepicアカウントIDを入力してください');
         if (playstyle.value == '') return errorAlert('端末を選択してください');
         return true;
     }
