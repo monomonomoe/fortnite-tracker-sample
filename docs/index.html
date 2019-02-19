@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127791221-6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-127791221-6');
+    </script>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-6433317881631256",
+              enable_page_level_ads: true
+         });
+    </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
@@ -11,8 +27,9 @@
     <h1>Fortnite戦績取得(ベータ版)</h1>
     <hr>
     <div id="input_list">
-        <p>ユーザ名を入力してデータを取得を押してください。</p>
-        <input id="user_name" type="text" placeholder="ユーザ名"/><br>
+        <p>ユーザ名を入力してデータを取得を押してください。上手く行かない方はepicアカウントIDを使用してください。</p>
+        <input id="user_name" type="text" placeholder="ユーザ名（もえぴっぴ）"/><br>
+        <input id="user_id" type="text" placeholder="アカウントID（38b70dd013154afea2df409ae71abb8f）"/><br>
         <select id="playstyle">
             <option value="gamepad">PS4/Switch/Xbox</option>
             <option value="keyboardmouse">PC</option>
@@ -20,6 +37,18 @@
         </select>
         <input id="start" type="button" value="データを取得"/>
     </div>
+    <hr>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- ページ上部 -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-6433317881631256"
+         data-ad-slot="8221506074"
+         data-ad-format="link"
+         data-full-width-responsive="true"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
     <hr>
     <label id="message"></label>
     <div id="result"></div>
@@ -42,3 +71,4 @@
         </p>
     </div>
 </body>
+</html>

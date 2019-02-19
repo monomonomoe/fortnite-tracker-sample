@@ -1,0 +1,1 @@
+https://monomonomoe.github.io/fortnite-tracker-sample/

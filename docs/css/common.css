@@ -44,8 +44,9 @@ hr {
 #input_list {
     text-align: center;
 }
-#user_name{
+#user_name,#user_id{
     width: 60%;
+    text-align: center;
 }
 #twitter_list{
     display: none;
