@@ -1,7 +1,12 @@
 body {
-    margin: 10px;
-    color: #494949;
-    font-size:32px;
+  width:100%;
+}
+
+.form {
+  margin: auto;
+  color: #494949;
+  max-width:800px;
+  font-size:32px; 
 }
 
 h1 {
@@ -26,7 +31,7 @@ hr {
   height: 0px;
   border-radius: 2px;
   border: 2px solid hsl(0, 0%, 60%);
-  width: 90%;
+  width: 100%;
 }
 
 .result_list p {
@@ -34,8 +39,7 @@ hr {
 }
 
 #footer {
-    margin: 15px;
-    width: 90%;
+    font-size: 28px;
 }
 #profile {
     font-size:24px;
@@ -45,7 +49,7 @@ hr {
     text-align: center;
 }
 #user_name,#user_id{
-    width: 60%;
+    width: 90%;
     text-align: center;
 }
 #twitter_list{

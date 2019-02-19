@@ -152,11 +152,11 @@ window.onload = (() => {
         const killsDeath = roundSecondDecimal(kills / (matchesplayed - placetop1));
         const killsGame = roundSecondDecimal(kills / matchesplayed);
         // 結果を生成
-        div.appendChild(createP('プレイ数:' + matchesplayed));
-        div.appendChild(createP('ビクロイ数:' + placetop1));
-        div.appendChild(createP('キル数:' + kills));
-        div.appendChild(createP('キル/デス比:' + killsDeath));
-        div.appendChild(createP('キル/ゲーム比:' + killsGame));
+        div.appendChild(createP('プレイ数 : ' + matchesplayed));
+        div.appendChild(createP('ビクロイ数 : ' + placetop1));
+        div.appendChild(createP('キル数 : ' + kills));
+        div.appendChild(createP('キル/デス比 : ' + killsDeath));
+        div.appendChild(createP('キル/ゲーム比 : ' + killsGame));
         div.appendChild(createHr());
         return div;
     }
@@ -169,11 +169,11 @@ window.onload = (() => {
         const killsGame = roundSecondDecimal(kills / matchesplayed);
         let tweetText = `?text=`;
         tweetText += `${rule}の戦績です！` + `%0a`;
-        tweetText += `プレイ数:` + matchesplayed + `%0a`;
-        tweetText += `ビクロイ数:` + placetop1 + `%0a`;
-        tweetText += `キル数:` + kills + `%0a`;
-        tweetText += `キル/デス比:` + killsDeath + `%0a`;
-        tweetText += `キル/ゲーム比:` + killsGame + `%0a`;
+        tweetText += `プレイ数 : ` + matchesplayed + `%0a`;
+        tweetText += `ビクロイ数 : ` + placetop1 + `%0a`;
+        tweetText += `キル数 : ` + kills + `%0a`;
+        tweetText += `キル/デス比 : ` + killsDeath + `%0a`;
+        tweetText += `キル/ゲーム比 : ` + killsGame + `%0a`;
         console.log( tweetURL + tweetText + tweetOptions);
         return tweetURL + tweetText + tweetOptions;
     }
