@@ -1,0 +1,84 @@
+body {
+    margin: 10px;
+    color: #494949;
+    font-size:32px;
+}
+
+h1 {
+    font-size:56px;
+    margin: 15px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 38px;
+    font-weight: bold; 
+    padding: 0.4em 0.5em;/*文字の上下 左右の余白*/
+    margin: 8px 2px;
+    color: #494949;/*文字色*/
+    background: #f4f4f4;/*背景色*/
+    border-left: solid 5px #7db4e6;/*左線*/
+    border-bottom: solid 3px #d7d7d7;/*下線*/
+}
+
+   
+hr {
+  height: 0px;
+  border-radius: 2px;
+  border: 2px solid hsl(0, 0%, 60%);
+  width: 90%;
+}
+
+.result_list p {
+    font-size: 26px
+}
+
+#footer {
+    margin: 15px;
+    width: 90%;
+}
+#profile {
+    font-size:24px;
+    color:#494949;
+}
+#input_list {
+    text-align: center;
+}
+#user_name{
+    width: 60%;
+}
+#twitter_list{
+    display: none;
+}
+/**
+* @link https://saruwakakun.com/html-css/reference/buttons
+*/
+.btn-social-long-twitter {
+    color: #FFF;/*文字・アイコン色*/
+    border-radius: 7px;/*角丸に*/
+    display: inline-block;
+    height: 50px;/*高さ*/
+    width: 140px;/*幅*/
+    text-align: center;/*中身を中央寄せ*/
+    font-size: 24px;/*文字のサイズ*/
+    line-height: 50px;/*高さと合わせる*/
+    vertical-align: middle;/*垂直中央寄せ*/
+    background: #1da1f3;
+    overflow: hidden;/*はみ出た部分を隠す*/
+    text-decoration:none;/*下線は消す*/
+}
+
+.btn-social-long-twitter .fa-twitter {
+  text-shadow: 2px 2px 0px #4287d6;
+  font-size: 30px;
+}
+
+.btn-social-long-twitter span {
+  display:inline-block;
+  transition: .5s;
+}
+
+.btn-social-long-twitter:hover span {
+  -webkit-transform: rotateX(360deg);
+  transform: rotateX(360deg);
+}

@@ -1,12 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/common.css">
+    <script type="text/javascript" src="js/main.js" charset="utf-8"></script>
 </head>
 <body>
-  hellor github pages
+    <h1>Fortnite戦績取得(ベータ版)</h1>
+    <hr>
+    <div id="input_list">
+        <p>ユーザ名を入力してデータを取得を押してください。</p>
+        <input id="user_name" type="text" placeholder="ユーザ名"/><br>
+        <select id="playstyle">
+            <option value="gamepad">PS4/Switch/Xbox</option>
+            <option value="keyboardmouse">PC</option>
+            <option value="touch">iOS/Android</option>
+        </select>
+        <input id="start" type="button" value="データを取得"/>
+    </div>
+    <hr>
+    <label id="message"></label>
+    <div id="result"></div>
+    <div id="twitter_list">
+        <p>
+            <b>☆結果をツイートする☆</b></br>
+            <a href="#" id="twitter-solo" class="btn-social-long-twitter"><i class="fa fa-twitter"></i>ソロ<span></span></a>
+            <a href="#" id="twitter-duo" class="btn-social-long-twitter"><i class="fa fa-twitter"></i>デュオ<span></span></a>
+            <a href="#" id="twitter-Squad" class="btn-social-long-twitter"><i class="fa fa-twitter"></i>スクアッド<span></span></a>
+        </p>
+        <hr>
+    </div>
+    <div id="footer">
+        <p id="profile">
+            EpicGames様が一般に公開しているAPIを使用させていただいております。</br>
+            サーバに攻撃・負荷をかける目的はありません。</br>
+            何かあった場合できる限り対応いたしますが特に責任を取るつもりはないので悪しからず。</br></br>
+            自己責任で良しなに使ってください。</br>
+            もえぴっぴ : <a href="https://twitter.com/monomonomoe" style="display:inline">@monomonomoe</a>
+        </p>
+    </div>
 </body>
-</html>
