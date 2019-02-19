@@ -16,7 +16,7 @@ window.onload = (() => {
     const urlUserStatusAPI = 'https://fortnite-public-api.theapinetwork.com/prod09/users/public/br_stats_v2';
     
     const tweetURL = 'https://twitter.com/intent/tweet';
-    const tweetOptions = '&url=https://monomonomoe.github.io/fortnite-tracker-sample/';
+    const tweetOptions = '&url=https://git.io/fhd2J';
     
     const buttonStart = document.querySelector('#start');
     const textUserName = document.querySelector('#user_name');
